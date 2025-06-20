@@ -1,0 +1,49 @@
+{
+    "name": "momentum",
+    "description": "Momentum-based strategy using RSI and ROC indicators",
+    "factors": {
+        "momentum": ["RSI", "ROC"],
+        "trend": ["SMA"],
+        "volatility": ["ATR"]
+    },
+    "weights": {
+        "RSI": 0.4,
+        "ROC": 0.4,
+        "SMA": 0.1,
+        "ATR": 0.1
+    },
+    "parameters": {
+        "RSI": {
+            "period": 14,
+            "overbought": 70,
+            "oversold": 30
+        },
+        "ROC": {
+            "period": 10
+        },
+        "SMA": {
+            "short_period": 20,
+            "long_period": 50
+        },
+        "ATR": {
+            "period": 14
+        }
+    },
+    "position_sizing": {
+        "max_position_size": 0.1,
+        "max_leverage": 1.0,
+        "stop_loss": 0.02
+    },
+    "trading_rules": {
+        "entry": {
+            "RSI": "oversold",
+            "ROC": "positive",
+            "SMA": "golden_cross"
+        },
+        "exit": {
+            "RSI": "overbought",
+            "ROC": "negative",
+            "SMA": "death_cross"
+        }
+    }
+} 
