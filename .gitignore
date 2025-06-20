@@ -4,3 +4,6 @@ hft_project/outputs/research/factor_cache/
 hft_project/logs/
 hft_project/data/tushare/
 *.DS_Store
+practical_hft_project/.venv/
+__pycache__/
+*.pyc
